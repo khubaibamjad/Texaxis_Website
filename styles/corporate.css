@@ -129,8 +129,9 @@ h3, h4 { font-weight: 500; }
     background: none !important;
     border-radius: 0;
     box-shadow: none !important;
-    padding-left: 0;
-    padding-right: 0;
+}
+@media (min-width: 769px) {
+    .navbar a { padding-left: 0; padding-right: 0; }
 }
 .navbar a::after { display: none !important; }
 .navbar a:hover, .navbar a.active { color: var(--primary-color); }
@@ -354,3 +355,57 @@ img, iframe, picture, .aboutus-image, .hq-panel__map { border-radius: 0 !importa
 .products-section::before, .products-section::after,
 .contact-section::before, .contact-section::after { display: none !important; }
 .about-highlights li { color: var(--text-light) !important; }
+
+/* ---------- Mobile header + menu (bozzetto navy submenu) ---------- */
+@media (max-width: 992px) {
+    .header-cta { display: none !important; }
+}
+@media (max-width: 768px) {
+    .navbar {
+        background: #00416b !important;
+        box-shadow: none !important;
+        padding: 0.9375rem 1.25rem 1.5rem;
+        gap: 0;
+    }
+    .navbar a {
+        color: #fff !important;
+        text-align: left;
+        padding: 0.9375rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        text-decoration: none !important;
+    }
+    .navbar a.active { color: #ff5252 !important; }
+    .navbar.active .nav-enquire {
+        margin-top: 1.25rem;
+        padding: 0.5625rem 0.9375rem;
+        border: 2px solid #fff;
+        border-radius: 1.125rem;
+        background: transparent;
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+    .navbar.active .nav-enquire:hover { background: #fff; color: #00416b !important; }
+    .mobile-menu-toggle span { background: #00416b !important; }
+    [data-theme="dark"] .mobile-menu-toggle span { background: #eaf1f9 !important; }
+    .hero-buttons .btn, .hero-banner-actions .btn { width: 100%; }
+}
+
+/* ---------- Refinements ---------- */
+.timeline-content { border-top: 3px solid var(--primary-color) !important; }
+.aboutus-image img, .expertise-image img { transition: transform 1.2s var(--bz-ease); }
+.aboutus-image, .expertise-image { overflow: visible; }
+.aboutus-image picture, .expertise-image picture { display: block; overflow: hidden; }
+.aboutus-image:hover img, .expertise-image:hover img { transform: scale(1.04); }
+.social-icons a, .footer-social a, .top-bar-social a { border-radius: 100% !important; transition: all 0.7s var(--bz-ease); }
+.social-icons a:hover { background: var(--primary-color) !important; color: #fff !important; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+::selection { background: #00416b; color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
