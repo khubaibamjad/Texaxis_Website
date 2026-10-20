@@ -1,6 +1,6 @@
 /*
  * Corporate theme — modelled on bozzetto-group.com's design system.
- * Navy #00416b brand, grey #707070 text, red #ff5252 only for small labels,
+ * Navy #00416b brand, grey #707070 text, logo blue (#0067b8 light, #4da3ff dark) for labels,
  * Fira Sans 300/500, pill outline buttons, flat cards, diagonal hatch accents.
  * Loaded last; overrides earlier sheets.
  */
@@ -9,7 +9,7 @@
     --primary-dark: #00416b;
     --primary-deep: #00416b;
     --secondary-color: #9dbde4;
-    --accent-color: #ff5252;
+    --accent-color: #0067b8;
     --accent-soft: #eaf1f9;
     --dark-color: #00416b;
     --light-color: #ffffff;
@@ -33,7 +33,7 @@
     --primary-dark: #9dbde4;
     --primary-deep: #00416b;
     --secondary-color: #9dbde4;
-    --accent-color: #ff5252;
+    --accent-color: #4da3ff;
     --accent-soft: #10283b;
     --dark-color: #eaf1f9;
     --light-color: #0a1a26;
@@ -84,7 +84,7 @@ h3, h4 { font-weight: 500; }
 .section-title::before,
 .section-title::after { display: none !important; }
 
-/* Red eyebrow label (bozzetto .red-label / .label) */
+/* Blue eyebrow label (bozzetto .red-label / .label) */
 .company-subtitle {
     color: var(--accent-color);
     text-transform: uppercase;
@@ -229,7 +229,7 @@ h3, h4 { font-weight: 500; }
     background: linear-gradient(90deg, rgba(0, 65, 107, 0.82) 0%, rgba(0, 65, 107, 0.45) 55%, rgba(0, 65, 107, 0.1) 100%) !important;
 }
 .hero-content-wrapper { text-align: left; }
-.hero-brand { color: #ff5252; text-transform: uppercase; font-size: 0.9375rem; font-weight: 500; letter-spacing: 0; }
+.hero-brand { color: #4da3ff; text-transform: uppercase; font-size: 0.9375rem; font-weight: 500; letter-spacing: 0; }
 .hero .hero-brand, h1.hero-brand { color: #fff; font-size: clamp(2.25rem, 1.5rem + 3vw, 3.4375rem); font-weight: 300; text-transform: none; }
 .hero-title { color: #fff; font-weight: 300; }
 .hero-subtitle { color: #fff; font-weight: 300; }
@@ -281,7 +281,7 @@ img, iframe, picture, .aboutus-image, .hq-panel__map { border-radius: 0 !importa
 .aboutus-image::before, .expertise-image::before {
     content: "";
     position: absolute;
-    inset: 1.25rem -1.25rem -1.25rem 1.25rem;
+    inset: 1.25rem 1.25rem -1.25rem -1.25rem;
     background-image: repeating-linear-gradient(-30deg, transparent, var(--bz-hatch) 1px, transparent 2px, transparent 13px);
     z-index: -1;
     pointer-events: none;
@@ -374,7 +374,7 @@ img, iframe, picture, .aboutus-image, .hq-panel__map { border-radius: 0 !importa
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         text-decoration: none !important;
     }
-    .navbar a.active { color: #ff5252 !important; }
+    .navbar a.active { color: #4da3ff !important; }
     .navbar.active .nav-enquire {
         margin-top: 1.25rem;
         padding: 0.5625rem 0.9375rem;
@@ -409,3 +409,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* ---------- QA fixes: contrast ---------- */
+.hq-panel__role { color: var(--primary-color); font-weight: 500; }
+.hq-link i, .info-card a:hover { color: var(--primary-color); }
+.skip-link { background: #00416b !important; color: #fff !important; }
+.top-bar .company-subtitle, .footer-cta .company-subtitle, .site-footer .company-subtitle { color: #4da3ff !important; }
+.footer-hours i, .site-footer .contact-item i { color: #4da3ff !important; }
+[data-theme="dark"] .partners-strip__logo img { filter: grayscale(1) invert(1) brightness(1.6); }
