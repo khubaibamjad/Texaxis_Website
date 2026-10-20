@@ -417,3 +417,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .top-bar .company-subtitle, .footer-cta .company-subtitle, .site-footer .company-subtitle { color: #4da3ff !important; }
 .footer-hours i, .site-footer .contact-item i { color: #4da3ff !important; }
 [data-theme="dark"] .partners-strip__logo img { filter: grayscale(1) invert(1) brightness(1.6); }
+
+/* ---------- Dark mode consistency: one bg, one card surface, no stray patches ---------- */
+[data-theme="dark"] body,
+[data-theme="dark"] main > section,
+[data-theme="dark"] .AboutUs, [data-theme="dark"] .products-section,
+[data-theme="dark"] .contact-section, [data-theme="dark"] .timeline-section { background-color: #0a1a26 !important; background-image: none !important; }
+[data-theme="dark"] .solutions-strip, [data-theme="dark"] .partners--strip,
+[data-theme="dark"] .contact-locations { background: #0d2130 !important; }
+[data-theme="dark"] .product-card, [data-theme="dark"] .location-card, [data-theme="dark"] .regional-card,
+[data-theme="dark"] .hq-panel, [data-theme="dark"] .solutions-list__item, [data-theme="dark"] .timeline-content,
+[data-theme="dark"] .contact-form-container, [data-theme="dark"] .contact-info-container { background: #10283b !important; border-color: #1f3a50 !important; }
+[data-theme="dark"] .header, [data-theme="dark"] .header.is-scrolled { background: #0a1a26 !important; }
+@media (min-width: 769px) { [data-theme="dark"] .navbar { background: transparent !important; } }
+[data-theme="dark"] .theme-toggle { background: transparent !important; border-color: #1f3a50 !important; }
+[data-theme="dark"] .hero-overlay { background: linear-gradient(90deg, rgba(0, 38, 63, 0.9) 0%, rgba(0, 38, 63, 0.55) 55%, rgba(0, 38, 63, 0.2) 100%) !important; }
+[data-theme="dark"] .hero-bg img { filter: brightness(0.8); }
+[data-theme="dark"] .footer-cta, [data-theme="dark"] .top-bar { background: #00263f !important; }
+[data-theme="dark"] .site-footer { background: #061420 !important; }
+[data-theme="dark"] .footer-bottom { background: transparent !important; }
+[data-theme="dark"] .logocontainer a, [data-theme="dark"] .footer-logo-box { background: #eaf1f9 !important; box-shadow: none !important; }
+[data-theme="dark"] iframe { filter: invert(0.9) hue-rotate(180deg); }
+[data-theme="dark"] .form-group input, [data-theme="dark"] .form-group select, [data-theme="dark"] .form-group textarea { background: transparent !important; color: #eaf1f9; }
+[data-theme="dark"] .product-header, [data-theme="dark"] .about-highlights, [data-theme="dark"] .about-highlights li { border-color: #1f3a50 !important; }
