@@ -194,6 +194,28 @@ function initializeContactForm() {
                     'other': 'Other',
                 };
                 const subjectLabel = subjectLabels[subject] || subject;
+
+                // Post to a form service (e.g. Formspree) when data-endpoint is set; fall back to mailto
+                const endpoint = contactForm.dataset.endpoint;
+                if (endpoint) {
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    if (submitBtn) submitBtn.disabled = true;
+                    fetch(endpoint, {
+                        method: 'POST',
+                        headers: { Accept: 'application/json' },
+                        body: new FormData(contactForm),
+                    }).then((res) => {
+                        if (!res.ok) throw new Error(res.status);
+                        contactForm.reset();
+                        showFormMessage('success', 'Thank you — your message has been sent. We will get back to you shortly.');
+                    }).catch(() => {
+                        showFormMessage('error', 'Sorry, the message could not be sent. Please email info@texaxis.com or use WhatsApp.');
+                    }).finally(() => {
+                        if (submitBtn) submitBtn.disabled = false;
+                    });
+                    return;
+                }
+
                 const body = [
                     `Name: ${name}`,
                     `Email: ${email}`,
