@@ -440,3 +440,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 [data-theme="dark"] iframe { filter: invert(0.9) hue-rotate(180deg); }
 [data-theme="dark"] .form-group input, [data-theme="dark"] .form-group select, [data-theme="dark"] .form-group textarea { background: transparent !important; color: #eaf1f9; }
 [data-theme="dark"] .product-header, [data-theme="dark"] .about-highlights, [data-theme="dark"] .about-highlights li { border-color: #1f3a50 !important; }
+
+/* ---------- Logo: transparent PNG, no white box; light variant on dark backgrounds ---------- */
+.logocontainer a, .footer-logo-box, [data-theme="dark"] .logocontainer a, [data-theme="dark"] .footer-logo-box {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+}
+.site-footer .footer-logo, [data-theme="dark"] .logocontainer img { content: url("../images/texaxis-light.png"); }
